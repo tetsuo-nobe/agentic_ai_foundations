@@ -50,33 +50,36 @@
       
 ---
 
-1. 解答例
+<details>
+<summary>解答例（クリックで展開）</summary>
 
-    ```
-    # TODO 旅行観光アドバイザーエージェントを作成
-    recipe_agent = Agent(callback_handler=None,
-        model="amazon.nova-lite-v1:0",
-        system_prompt="""あなたは TravelBot という旅行の観光アドバイザーです。
-        ユーザーの旅行における観光地を見つけるのを手伝うために、観光地に関する質問に答えてください。
-        観光地の情報を探すには websearch ツールを使用してください。""",
-        tools=[websearch]
-    )
+```
+# TODO 旅行観光アドバイザーエージェントを作成
+recipe_agent = Agent(callback_handler=None,
+    model="amazon.nova-lite-v1:0",
+    system_prompt="""あなたは TravelBot という旅行の観光アドバイザーです。
+    ユーザーの旅行における観光地を見つけるのを手伝うために、観光地に関する質問に答えてください。
+    観光地の情報を探すには websearch ツールを使用してください。""",
+    tools=[websearch]
+)
+
+
+print("私は TravelBot という、役立つ旅行の観光アドバイザーです。観光についてのお問い合わせに対応します。\n")
+
+flag = True
+
+while flag:
+    prompt = input("prompt>")
     
-    
-    print("私は TravelBot という、役立つ旅行の観光アドバイザーです。観光についてのお問い合わせに対応します。\n")
-    
-    flag = True
-    
-    while flag:
-        prompt = input("prompt>")
+    if prompt == "quit":
+        flag = False
+    else:
+       # TODO 観光アドバイザーをテストする
+       response = recipe_agent(prompt)
+       # TODO レスポンスを表示
+       print(response)
         
-        if prompt == "quit":
-            flag = False
-        else:
-           # TODO 観光アドバイザーをテストする
-           response = recipe_agent(prompt)
-           # TODO レスポンスを表示
-           print(response)
-            
-    print("チャットボットを終了しました。\n")
-    ```
+print("チャットボットを終了しました。\n")
+```
+
+</details>
