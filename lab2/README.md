@@ -12,7 +12,7 @@
       
 ---
 
-###　手順 
+### 手順 
 
 1. Lab 2 の最後のセルで、Code Cell を追加します。
 <img width="298" height="66" alt="add_code_cell" src="https://github.com/user-attachments/assets/34cd7b36-ac4b-476b-89cf-bf0f1a21ef00" />
