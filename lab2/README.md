@@ -57,7 +57,7 @@
 
 ```
 # TODO 旅行観光アドバイザーエージェントを作成
-recipe_agent = Agent(callback_handler=None,
+travel_agent = Agent(callback_handler=None,
     model="amazon.nova-lite-v1:0",
     system_prompt="""あなたは TravelBot という旅行の観光アドバイザーです。
     ユーザーの旅行における観光地を見つけるのを手伝うために、観光地に関する質問に答えてください。
@@ -77,7 +77,7 @@ while flag:
         flag = False
     else:
        # TODO 観光アドバイザーをテストする
-       response = recipe_agent(prompt)
+       response = travel_agent(prompt)
        # TODO レスポンスを表示
        print(response)
         
